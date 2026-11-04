@@ -1,0 +1,63 @@
+[project]
+name = "brainup"
+version = "0.1.0"
+description = "升级大脑 — LLM 编译维护的复利知识库引擎（读书/学习场景，CLI + MCP）"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.12"
+authors = [{ name = "The brainup Authors" }]
+keywords = [
+    "llm-wiki",
+    "knowledge-base",
+    "personal-knowledge-management",
+    "mcp",
+    "karpathy",
+    "okf",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: Chinese (Simplified)",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.9",
+    "pydantic>=2.9",
+    "httpx>=0.27",
+    "mcp>=1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/f00919255/brainup"  # 待 GitHub 仓库建立后更正
+Design = "https://github.com/f00919255/brainup/blob/main/design/design-proposal-v0.1.md"
+
+[project.scripts]
+brainup = "brainup.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brainup"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
