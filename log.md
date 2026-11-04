@@ -16,6 +16,7 @@
 - 过程记录：gh CLI 经 winget 安装（首次下载超时重试成功）；设备码流程三次失败（一次过期、一次网络轮询超时、一次用户未完成）后第四次成功，补齐 workflow scope；首次 push 因 OAuth token 缺 workflow scope 被拒（CI 文件需要）；repo description 曾被 PowerShell 5.1 无 BOM 读取写坏，经 gh api + UTF-8 JSON 修正
 - 教训：本机 PowerShell 5.1 执行含中文的 .ps1 脚本会因编码假设产生 mojibake——含中文的脚本应走 JSON 文件 + gh api，或写 BOM
 - 用户反馈：repo description 去掉「中文优先」表述
+- CI 修复：Actions runner 无全局 git 身份导致测试失败（Vault.init 首次 commit 需要）→ ci.yml 增加 identity 配置；修复后四矩阵全绿（41783750189，1m16s）
 
 ## [2026-11-04] build | 核心引擎构建完成（184d9d5）
 - 9 个引擎模块 + 35 项测试全绿 + ruff 全绿 + 端到端验证通过（init→ingest→MCP 提交→人审→lint→检索→伪造引用拦截）
