@@ -14,10 +14,23 @@
 
 ## 当前状态（2026-11-04）
 
-- **调研阶段已完成**，产出在 `research/`（按 LLM Wiki 模式组织）：`wiki/synthesis.md` 是总结论入口，`wiki/landscape.md` 是生态全景，`raw/` 存四份原始资料（主清单/gist 评论区/三份深挖笔记）。
-- **设计已确认**（`design/design-proposal-v0.1.md`）：读书/学习场景；CLI + MCP 工具先行（引擎/壳分离）；技术栈 Python 3.12+ / uv；模型 BYOK 全兼容（OpenAI-compat + Anthropic，小模型路由+大模型综合）；Apache-2.0；双语命名（具体名待定）。
-- 仓库尚未 `git init`。核心架构约束：Vault 三层单向流（raw 不可变 → .kb 可重建 → wiki append-only）、封闭动作词表写路径、lint=决策队列、渐进结构化（50/100/300 阈值）、OKF v0.2 兼容。
-- 本文件需随项目推进持续更新：仓库脚手架落地后补充命令速查（build / test / lint），代码成型后补充架构与目录说明。
+- **项目名**：`brainup`（repo/PyPI）+「升级大脑」（中文产品名）。读书/学习场景的 LLM Wiki 复利知识库引擎，CLI + MCP 工具先行（引擎/壳分离，v0.3 GUI 包壳）。
+- **阶段**：v0.1 骨架已提交（`81f48e3`）。设计已定稿：`design/design-proposal-v0.1.md`；调研产出入库 `research/`（`research/wiki/synthesis.md` 为结论入口）。
+- **核心架构约束**（勿违反，有调研证据支撑）：Vault 三层单向流（raw 不可变 → .kb 可重建 → wiki append-only）、封闭动作词表写路径（raw 层从动作枚举上不可达）、lint=决策队列、渐进结构化（50/100/300 阈值）、OKF v0.2 兼容、答案写回带防火墙。
+
+## 命令速查
+
+```bash
+uv sync --dev          # 安装依赖（含 dev 组）
+uv run brainup --help  # CLI（v0.1 仅 version/status 可用，其余为占位）
+uv run pytest          # 测试
+uv run ruff check .    # lint
+uv build               # 构建
+```
+
+- 本地解释器为 CPython 3.14（requires-python >=3.12）；CI 矩阵 3.12/3.13 × ubuntu/windows。
+- Windows 中文控制台：CLI 已强制 UTF-8 stdio；旧版 conhost 需 `chcp 65001`。
+- 提交信息用文件方式传入（`git commit -F <file>`），避免 shell 多行结构问题。
 
 ## 既定工作流（用户约定，勿跳过）
 
