@@ -36,8 +36,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/f00919255/brainup"  # 待 GitHub 仓库建立后更正
-Design = "https://github.com/f00919255/brainup/blob/main/design/design-proposal-v0.1.md"
+Homepage = "https://github.com/shaohuifan/brainup"
+Design = "https://github.com/shaohuifan/brainup/blob/main/design/design-proposal-v0.1.md"
 
 [project.scripts]
 brainup = "brainup.cli:app"
