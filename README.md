@@ -23,10 +23,26 @@
 
 ```bash
 uv tool install brainup   # 或 uvx brainup
-brainup status
+
+brainup init ~/mykb               # 初始化三层 vault（git + 中文规约）
+brainup ingest 书.pdf --auto      # 摄入：解析 → raw 归档 → 规范化 → （配置 LLM 时）生成编译计划
+brainup review                    # 人审队列：批准/拒绝计划，裁决 lint 决策
+brainup query "什么是递归基例"     # 三级渐进披露 + FTS 兜底
+brainup lint                      # 健康扫描 → 决策队列（分诊 inbox）
+brainup metrics                   # 北极星指标：查询 token / 命中率 / 源页比
 ```
 
-> 当前为 v0.1 骨架阶段。设计已定稿（[design/design-proposal-v0.1.md](design/design-proposal-v0.1.md)），命令面逐步落地中。
+**接入任意 agent（MCP）**：
+
+```bash
+brainup mcp --vault ~/mykb        # stdio MCP server
+```
+
+在 Claude Code / Cursor / OpenCode 等客户端配置后，agent 可 `read_catalog` → `read_page` → `search` → `read_extract` → `submit_plan`（封闭动作词表 JSON）——**提交的计划永远进人审队列，批准才落盘**。
+
+**配置模型（BYOK，可选）**：编辑 `~/mykb/.kb/config.toml`，填入任意 OpenAI 兼容端点（DeepSeek / GLM / Qwen / Ollama 本地 / OpenRouter）或 Anthropic；key 放环境变量，永不入库。
+
+**查看知识库**：用 Obsidian 打开 vault 目录——页面互链、引用可点击、graph view 可视化。
 
 ## 命令面（v0.1 规划）
 

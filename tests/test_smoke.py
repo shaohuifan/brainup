@@ -1,4 +1,6 @@
-"""冒烟测试：骨架可用性。"""
+"""冒烟测试：CLI 入口可用性。"""
+
+from __future__ import annotations
 
 from typer.testing import CliRunner
 
@@ -18,12 +20,13 @@ def test_cli_version_command() -> None:
     assert __version__ in result.output
 
 
-def test_cli_status_command() -> None:
-    result = runner.invoke(app, ["status"])
+def test_cli_help_lists_all_commands() -> None:
+    result = runner.invoke(app, ["--help"])
     assert result.exit_code == 0
+    for cmd in ("init", "ingest", "query", "lint", "review", "metrics", "mcp", "status"):
+        assert cmd in result.output
 
 
-def test_cli_stub_commands_exit_nonzero() -> None:
-    for cmd in ["init", "ingest", "query", "lint", "review", "metrics"]:
-        result = runner.invoke(app, [cmd])
-        assert result.exit_code == 1, cmd
+def test_status_outside_vault_fails(tmp_path) -> None:
+    result = runner.invoke(app, ["status", "--vault", str(tmp_path / "nope")])
+    assert result.exit_code == 1
