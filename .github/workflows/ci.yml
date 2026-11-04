@@ -18,6 +18,8 @@ jobs:
         with:
           enable-cache: true
       - run: uv python install ${{ matrix.python }}
+      - run: git config --global user.name "ci"
+      - run: git config --global user.email "ci@brainup.invalid"
       - run: uv sync --dev
       - run: uv run ruff check .
       - run: uv run pytest
