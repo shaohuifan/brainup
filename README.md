@@ -80,4 +80,4 @@ OpenAI 兼容接口统一接入：DeepSeek / GLM / Qwen / Moonshot / OpenRouter 
 
 ## English
 
-**brainup** is a compounding knowledge-base engine for readers, built on [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): instead of re-deriving answers from raw documents at query time (RAG), an LLM incrementally compiles what you read into a persistent, interlinked markdown wiki. CLI + MCP; BYOK model access (any OpenAI-compatible endpoint or Anthropic); OKF v0.2-compatible vaults you own in git. Chinese-first, English-friendly. Pre-alpha — see the [design doc](design/design-proposal-v0.1.md).
+**brainup** is a compounding knowledge-base engine for readers, built on [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): instead of re-deriving answers from raw documents at query time (RAG), an LLM incrementally compiles what you read into a persistent, interlinked markdown wiki. CLI + MCP; BYOK model access (any OpenAI-compatible endpoint or Anthropic); OKF v0.2-compatible vaults you own in git. Bilingual (中文 / English). Pre-alpha — see the [design doc](design/design-proposal-v0.1.md).
