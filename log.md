@@ -18,6 +18,11 @@
 - 用户反馈：repo description 去掉「中文优先」表述
 - CI 修复：Actions runner 无全局 git 身份导致测试失败（Vault.init 首次 commit 需要）→ ci.yml 增加 identity 配置；修复后四矩阵全绿（41783750189，1m16s）
 
+## [2026-11-04] docs | 定位修正：读书人 → 学习爱好者（多源）
+- 用户反馈：受众不叫"读书人"，应为"学习爱好者"；知识来源不限于书籍，还包括论文/博客/播客/视频/代码
+- 已同步：GitHub repo description、README（hero/流程图/示例/英文简介）、AGENTS.md、pyproject description、design 文档（决策记录/用户画像/跨源示例/schema 标题）、cli/mcp 帮助文本、vault 内置 AGENTS.md 模板
+- research/ 下历史记录保持原样（调研阶段的真实记录，不回改）
+
 ## [2026-11-04] build | 核心引擎构建完成（184d9d5）
 - 9 个引擎模块 + 35 项测试全绿 + ruff 全绿 + 端到端验证通过（init→ingest→MCP 提交→人审→lint→检索→伪造引用拦截）
 - P0 写路径信任全部落地并测试锁定：封闭词表（extra=forbid）、逐字引用核验、人审队列、原子应用、失败零写入

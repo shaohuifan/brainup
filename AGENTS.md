@@ -14,7 +14,7 @@
 
 ## 当前状态（2026-11-04）
 
-- **项目名**：`brainup`（repo/PyPI）+「升级大脑」（中文产品名）。读书/学习场景的 LLM Wiki 复利知识库引擎，CLI + MCP 工具先行（引擎/壳分离，v0.3 GUI 包壳）。
+- **项目名**：`brainup`（repo/PyPI）+「升级大脑」（中文产品名）。学习爱好者的 LLM Wiki 复利知识库引擎（多源：论文/书籍/博客/播客/视频/代码），CLI + MCP 工具先行（引擎/壳分离，v0.3 GUI 包壳）。
 - **阶段**：v0.1 骨架已提交（`81f48e3`）。设计已定稿：`design/design-proposal-v0.1.md`；调研产出入库 `research/`（`research/wiki/synthesis.md` 为结论入口）。
 - **核心架构约束**（勿违反，有调研证据支撑）：Vault 三层单向流（raw 不可变 → .kb 可重建 → wiki append-only）、封闭动作词表写路径（raw 层从动作枚举上不可达）、lint=决策队列、渐进结构化（50/100/300 阈值）、OKF v0.2 兼容、答案写回带防火墙。
 

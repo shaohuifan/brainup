@@ -1,7 +1,7 @@
 [project]
 name = "brainup"
 version = "0.1.0"
-description = "升级大脑 — LLM 编译维护的复利知识库引擎（读书/学习场景，CLI + MCP）"
+description = "升级大脑 — 学习爱好者的复利知识库引擎（多源：论文/书籍/博客/播客/视频/代码；CLI + MCP）"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.12"

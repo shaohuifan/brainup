@@ -37,7 +37,7 @@ _ensure_utf8_stdio()
 
 app = typer.Typer(
     name="brainup",
-    help="升级大脑 — 读书人的复利知识库引擎（LLM Wiki 模式，CLI + MCP）。",
+    help="升级大脑 — 学习爱好者的复利知识库引擎（LLM Wiki 模式，CLI + MCP）。",
     no_args_is_help=True,
 )
 

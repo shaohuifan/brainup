@@ -1,6 +1,6 @@
 # brainup · 升级大脑 🧠⬆️
 
-> **读书人的复利知识库引擎** — 读过的每一本书，都变成往后可用的知识资产。
+> **学习爱好者的复利知识库引擎** — 论文、书籍、博客、播客、视频、代码，学过的每一点知识都变成往后可用的资产。
 
 [English](#english) | 中文
 
@@ -9,12 +9,12 @@
 基于 [Karpathy 的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)构建的个人知识库工具：不做 RAG 式的"每次查询重新拼装"，而是让 LLM 把你读过的书、论文、文章**增量编译**成一个持久的、互相链接的 markdown wiki——知识编译一次、持续保鲜、随取随用。
 
 ```
-你的书（PDF/EPUB/文章）→  brainup 编译  →  知识资产（概念卡/人物卡/主题页/分歧页）
+你的来源（论文/书籍/博客/播客/视频/代码）→  brainup 编译  →  知识资产（概念卡/人物卡/主题页/分歧页）
         raw 不可变层      受约束的写路径     wiki append-only 声明层（人审队列把关）
 ```
 
 **核心信念**（来自 30+ 一手来源的调研，见 [`research/`](research/README.md)）：
-- 跨书连接是检索做不到的——"这本书和那本书在 X 上的分歧"编译时就已经存在于页面里
+- 跨源连接是检索做不到的——"这篇论文和那篇博客在 X 上的分歧"编译时就已经存在于页面里
 - 信任靠工程不靠自觉：封闭动作词表 + 逐字引用核验 + 人审队列
 - 维护靠决策队列而非自动修复：每条死链/重复/矛盾都是一个可批量裁决的分诊决定
 - 知识资产用 [OKF v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) 兼容格式存储——可携带，不锁死
@@ -25,7 +25,7 @@
 uv tool install brainup   # 或 uvx brainup
 
 brainup init ~/mykb               # 初始化三层 vault（git + 中文规约）
-brainup ingest 书.pdf --auto      # 摄入：解析 → raw 归档 → 规范化 → （配置 LLM 时）生成编译计划
+brainup ingest 论文.pdf --auto    # 摄入：解析 → raw 归档 → 规范化 → （配置 LLM 时）生成编译计划
 brainup review                    # 人审队列：批准/拒绝计划，裁决 lint 决策
 brainup query "什么是递归基例"     # 三级渐进披露 + FTS 兜底
 brainup lint                      # 健康扫描 → 决策队列（分诊 inbox）
@@ -80,4 +80,4 @@ OpenAI 兼容接口统一接入：DeepSeek / GLM / Qwen / Moonshot / OpenRouter 
 
 ## English
 
-**brainup** is a compounding knowledge-base engine for readers, built on [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): instead of re-deriving answers from raw documents at query time (RAG), an LLM incrementally compiles what you read into a persistent, interlinked markdown wiki. CLI + MCP; BYOK model access (any OpenAI-compatible endpoint or Anthropic); OKF v0.2-compatible vaults you own in git. Bilingual (中文 / English). Pre-alpha — see the [design doc](design/design-proposal-v0.1.md).
+**brainup** is a compounding knowledge-base engine for lifelong learners, built on [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): instead of re-deriving answers from raw documents at query time (RAG), an LLM incrementally compiles papers, books, blogs, podcasts, videos, and code — whatever you learn from — into a persistent, interlinked markdown wiki. CLI + MCP; BYOK model access (any OpenAI-compatible endpoint or Anthropic); OKF v0.2-compatible vaults you own in git. Bilingual (中文 / English). Pre-alpha — see the [design doc](design/design-proposal-v0.1.md).
