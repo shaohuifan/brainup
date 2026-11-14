@@ -53,19 +53,19 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/brainup"]
+packages = ["source/brainup"]
 
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-src = ["src", "tests"]
+src = ["source", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.per-file-ignores]
 # B008：typer 的 Argument/Option 默认值模式是官方推荐写法
-"src/brainup/cli.py" = ["B008"]
+"source/brainup/cli.py" = ["B008"]
 "tests/*" = ["B008"]
 
 [tool.pytest.ini_options]
