@@ -18,6 +18,14 @@
 - **阶段**：v0.1 骨架已提交（`81f48e3`）。设计已定稿：`design/design-proposal-v0.1.md`；调研产出入库 `research/`（`research/wiki/synthesis.md` 为结论入口）。
 - **核心架构约束**（勿违反，有调研证据支撑）：Vault 三层单向流（raw 不可变 → .kb 可重建 → wiki append-only）、封闭动作词表写路径（raw 层从动作枚举上不可达）、lint=决策队列、渐进结构化（50/100/300 阈值）、OKF v0.2 兼容、答案写回带防火墙。
 
+## 目录结构
+
+- `source/brainup/` — 引擎源码（v0.1 已实现）；`tests/` — 测试
+- `design/` — 设计文档（`design-proposal-v0.1.md` 为定稿设计）
+- `research/` — 技术生态调研（LLM Wiki 生态、30+ 一手来源）
+- `principles/` — 学习科学理论基础（学习理论/AI×学习/记忆算法 → 下一阶段规划依据）
+- `log.md` — 项目日志（append-only）；vault 内另有每 vault 的 `.kb/` 状态
+
 ## 命令速查
 
 ```bash
