@@ -15,16 +15,17 @@
 
 | 文件 | 主题 | 状态 |
 |---|---|---|
-| [raw/learning-science-core.md](raw/learning-science-core.md) | 学习科学核心实证：Dunlosky 2013 十技巧评级、检索练习、间隔、交错、生成、合意困难、元认知、认知负荷、迁移 | 🔄 调研中 |
-| [raw/ai-learning-2025-2026.md](raw/ai-learning-2025-2026.md) | AI×学习最新研究：MIT 认知债、宾大"无护栏 AI 伤学习"、哈佛 AI 导师 RCT、元分析、批判性思维 | 🔄 调研中 |
-| [raw/memory-pkm-evidence.md](raw/memory-pkm-evidence.md) | 记忆算法与 PKM：FSRS 原理与基准、Anki 实证、笔记方法、概念图、LLM 自动出题 | 🔄 调研中 |
+| [raw/learning-science-core.md](raw/learning-science-core.md) | 学习科学核心实证：Dunlosky 2013 十技巧评级、检索练习、间隔、交错、生成、合意困难、元认知、认知负荷、迁移 | ✅ 完成（475 行） |
+| [raw/ai-learning-2025-2026.md](raw/ai-learning-2025-2026.md) | AI×学习最新研究：MIT 认知债、宾大"无护栏 AI 伤学习"、哈佛 AI 导师 RCT、元分析、批判性思维 | ✅ 完成（324 行） |
+| [raw/memory-pkm-evidence.md](raw/memory-pkm-evidence.md) | 记忆算法与 PKM：FSRS 原理与基准、Anki 实证、笔记方法、概念图、LLM 自动出题 | ✅ 完成（310 行） |
 
 ## wiki/（综合分析）
 
 | 页面 | 内容 | 状态 |
 |---|---|---|
-| wiki/synthesis.md | 证据综合 → 设计原则 → 下一阶段（v0.2）规划提案 | ⏳ 待三路调研完成 |
+| wiki/synthesis.md | 证据综合 → 六条设计公理 → 设计原则 → v0.2 分阶段规划 → 评估方法 → 待讨论问题 | ✅ 完成 |
 
 ## 进度日志
 
 - 2026-11-14 启动：三路并行调研（核心实证 / AI×学习 / 记忆与 PKM），约定产出落 raw/，完成后写 synthesis 并提交讨论
+- 2026-11-14 三路完成，综合报告成稿（`wiki/synthesis.md`），等待与用户讨论 v0.2 方向
